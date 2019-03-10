@@ -58,8 +58,8 @@ class MassReconcileAdvancedRef(models.TransientModel):
             and their values to match in the opposite lines.
             A matching key can have multiples values.
         """
-        return (('partner_id', move_line['partner_id']),
-                ('ref', move_line['ref'].lower().strip()))
+        return (('partner_id', move_line['partner_id']))
+#                ('ref', move_line['ref'].lower().strip()))
 
     @staticmethod
     def _opposite_matchers(move_line):
@@ -101,5 +101,5 @@ class MassReconcileAdvancedRef(models.TransientModel):
         :yield: matchers as tuple ('matcher key', value(s))
         """
         yield ('partner_id', move_line['partner_id'])
-        yield ('ref', ((move_line['ref'] or '').lower().strip(),
-                       move_line['name'].lower().strip()))
+ #       yield ('ref', ((move_line['ref'] or '').lower().strip(),
+ #                      move_line['name'].lower().strip()))
