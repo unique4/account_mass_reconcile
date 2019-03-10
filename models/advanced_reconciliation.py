@@ -17,7 +17,8 @@ class MassReconcileAdvancedRef(models.TransientModel):
         will be skipped for reconciliation. Can be inherited to
         skip on some conditions. ie: ref or partner_id is empty.
         """
-        return not (move_line.get('ref') and move_line.get('partner_id'))
+#        return not (move_line.get('ref') and move_line.get('partner_id'))
+         return not move_line.get('partner_id')
 
     @staticmethod
     def _matchers(move_line):
